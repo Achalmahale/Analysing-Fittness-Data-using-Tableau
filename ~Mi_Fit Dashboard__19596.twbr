@@ -76,6 +76,14 @@
               <column datatype='integer' name='heart_rate' ordinal='3' />
             </columns>
           </relation>
+          <relation connection='excel-direct.1y7f4an1pmfxhy15k68xe15r9otb' name='heart_rate_sleep2' table='[heart_rate_sleep$]' type='table'>
+            <columns gridOrigin='A1:D139:no:A1:D139:0' header='yes' outcome='2'>
+              <column datatype='datetime' name='time' ordinal='0' />
+              <column datatype='integer' name='deep_sleep' ordinal='1' />
+              <column datatype='integer' name='light_sleep' ordinal='2' />
+              <column datatype='integer' name='heart_rate' ordinal='3' />
+            </columns>
+          </relation>
           <relation connection='excel-direct.1y7f4an1pmfxhy15k68xe15r9otb' name='Sleep1' table='[Sleep$]' type='table'>
             <columns gridOrigin='A1:D367:no:A1:D367:0' header='yes' outcome='6'>
               <column datatype='date' name='date' ordinal='0' />
@@ -103,12 +111,15 @@
           <map key='[deepSleepTime (Sleep1)]' value='[Sleep1].[deepSleepTime]' />
           <map key='[deepSleepTime]' value='[Sleep].[deepSleepTime]' />
           <map key='[deep_sleep (heart!rate!sleep1)]' value='[heart_rate_sleep1].[deep_sleep]' />
+          <map key='[deep_sleep (heart!rate!sleep2)]' value='[heart_rate_sleep2].[deep_sleep]' />
           <map key='[deep_sleep]' value='[heart_rate_sleep].[deep_sleep]' />
           <map key='[heartRate (Heart!rate!manual)]' value='[Heart_rate_manual].[heartRate]' />
           <map key='[heartRate]' value='[Heart_rate_auto].[heartRate]' />
           <map key='[heart_rate (heart!rate!sleep1)]' value='[heart_rate_sleep1].[heart_rate]' />
+          <map key='[heart_rate (heart!rate!sleep2)]' value='[heart_rate_sleep2].[heart_rate]' />
           <map key='[heart_rate]' value='[heart_rate_sleep].[heart_rate]' />
           <map key='[light_sleep (heart!rate!sleep1)]' value='[heart_rate_sleep1].[light_sleep]' />
+          <map key='[light_sleep (heart!rate!sleep2)]' value='[heart_rate_sleep2].[light_sleep]' />
           <map key='[light_sleep]' value='[heart_rate_sleep].[light_sleep]' />
           <map key='[shallowSleepTime (Sleep1)]' value='[Sleep1].[shallowSleepTime]' />
           <map key='[shallowSleepTime]' value='[Sleep].[shallowSleepTime]' />
@@ -116,6 +127,7 @@
           <map key='[time (Heart!rate!manual)]' value='[Heart_rate_manual].[time]' />
           <map key='[time (heart!rate!sleep)]' value='[heart_rate_sleep].[time]' />
           <map key='[time (heart!rate!sleep1)]' value='[heart_rate_sleep1].[time]' />
+          <map key='[time (heart!rate!sleep2)]' value='[heart_rate_sleep2].[time]' />
           <map key='[time]' value='[Heart_rate_auto].[time]' />
           <map key='[wakeTime (Sleep1)]' value='[Sleep1].[wakeTime]' />
           <map key='[wakeTime]' value='[Sleep].[wakeTime]' />
@@ -181,6 +193,20 @@
             <remote-name />
             <remote-type>0</remote-type>
             <parent-name>[heart_rate_sleep]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D139:no:A1:D139:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[heart_rate_sleep2]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -370,7 +396,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>deep_sleep</remote-name>
@@ -385,7 +411,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>light_sleep</remote-name>
@@ -400,7 +426,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>heart_rate</remote-name>
@@ -415,7 +441,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>time</remote-name>
@@ -430,7 +456,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>deep_sleep</remote-name>
@@ -445,7 +471,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>light_sleep</remote-name>
@@ -460,7 +486,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>heart_rate</remote-name>
@@ -475,7 +501,67 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[time (heart!rate!sleep2)]</local-name>
+            <parent-name>[heart_rate_sleep2]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deep_sleep</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[deep_sleep (heart!rate!sleep2)]</local-name>
+            <parent-name>[heart_rate_sleep2]</parent-name>
+            <remote-alias>deep_sleep</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>light_sleep</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[light_sleep (heart!rate!sleep2)]</local-name>
+            <parent-name>[heart_rate_sleep2]</parent-name>
+            <remote-alias>light_sleep</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>heart_rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[heart_rate (heart!rate!sleep2)]</local-name>
+            <parent-name>[heart_rate_sleep2]</parent-name>
+            <remote-alias>heart_rate</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>date</remote-name>
@@ -483,7 +569,7 @@
             <local-name>[date (Sleep1)]</local-name>
             <parent-name>[Sleep1]</parent-name>
             <remote-alias>date</remote-alias>
-            <ordinal>17</ordinal>
+            <ordinal>21</ordinal>
             <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
@@ -498,7 +584,7 @@
             <local-name>[deepSleepTime (Sleep1)]</local-name>
             <parent-name>[Sleep1]</parent-name>
             <remote-alias>deepSleepTime</remote-alias>
-            <ordinal>18</ordinal>
+            <ordinal>22</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -513,7 +599,7 @@
             <local-name>[shallowSleepTime (Sleep1)]</local-name>
             <parent-name>[Sleep1]</parent-name>
             <remote-alias>shallowSleepTime</remote-alias>
-            <ordinal>19</ordinal>
+            <ordinal>23</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -528,7 +614,7 @@
             <local-name>[wakeTime (Sleep1)]</local-name>
             <parent-name>[Sleep1]</parent-name>
             <remote-alias>wakeTime</remote-alias>
-            <ordinal>20</ordinal>
+            <ordinal>24</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -543,7 +629,7 @@
             <local-name>[date (Sleep)]</local-name>
             <parent-name>[Sleep]</parent-name>
             <remote-alias>date</remote-alias>
-            <ordinal>21</ordinal>
+            <ordinal>25</ordinal>
             <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
@@ -558,7 +644,7 @@
             <local-name>[deepSleepTime]</local-name>
             <parent-name>[Sleep]</parent-name>
             <remote-alias>deepSleepTime</remote-alias>
-            <ordinal>22</ordinal>
+            <ordinal>26</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -573,7 +659,7 @@
             <local-name>[shallowSleepTime]</local-name>
             <parent-name>[Sleep]</parent-name>
             <remote-alias>shallowSleepTime</remote-alias>
-            <ordinal>23</ordinal>
+            <ordinal>27</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -588,7 +674,7 @@
             <local-name>[wakeTime]</local-name>
             <parent-name>[Sleep]</parent-name>
             <remote-alias>wakeTime</remote-alias>
-            <ordinal>24</ordinal>
+            <ordinal>28</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -615,11 +701,13 @@
       <_.fcp.ObjectModelTableType.true...column caption='Sleep1' datatype='table' name='[__tableau_internal_object_id__].[Sleep_48D05B9E0C694AB6B5CD01554FDE4714]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='Sleep' datatype='table' name='[__tableau_internal_object_id__].[Sleep_F079E0E1B768481FA7F41A3E1AC4BEED]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='Steps' datatype='table' name='[__tableau_internal_object_id__].[Steps_60E2B57754324356A4654F01DAF61A7D]' role='measure' type='quantitative' />
-      <_.fcp.ObjectModelTableType.true...column caption='heart_rate_sleep1' datatype='table' name='[__tableau_internal_object_id__].[heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2]' role='measure' type='quantitative' />
-      <_.fcp.ObjectModelTableType.true...column caption='heart_rate_sleep' datatype='table' name='[__tableau_internal_object_id__].[heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='heart_rate_sleep1' datatype='table' name='[__tableau_internal_object_id__].[heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='heart_rate_sleep' datatype='table' name='[__tableau_internal_object_id__].[heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='heart_rate_sleep2' datatype='table' name='[__tableau_internal_object_id__].[heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3]' role='measure' type='quantitative' />
       <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
       <column caption='Deep Sleep Time' datatype='integer' name='[deepSleepTime]' role='measure' type='quantitative' />
       <column caption='Deep Sleep (Heart!Rate!Sleep1)' datatype='integer' name='[deep_sleep (heart!rate!sleep1)]' role='measure' type='quantitative' />
+      <column caption='Deep Sleep (Heart!Rate!Sleep2)' datatype='integer' name='[deep_sleep (heart!rate!sleep2)]' role='measure' type='quantitative' />
       <column caption='Deep Sleep' datatype='integer' name='[deep_sleep]' role='measure' type='quantitative' />
       <column aggregation='None' datatype='integer' name='[heartRate (Heart!rate!manual) (bin)]' role='dimension' type='quantitative'>
         <calculation class='bin' decimals='0' formula='[heartRate (Heart!rate!manual)]' peg='0' size='9.1' />
@@ -627,65 +715,31 @@
       <column datatype='integer' name='[heartRate (Heart!rate!manual)]' role='measure' type='quantitative' />
       <column caption='Heart Rate' datatype='integer' name='[heartRate]' role='measure' type='quantitative' />
       <column caption='Heart Rate (Heart!Rate!Sleep1)' datatype='integer' name='[heart_rate (heart!rate!sleep1)]' role='measure' type='quantitative' />
+      <column caption='Heart Rate (Heart!Rate!Sleep2)' datatype='integer' name='[heart_rate (heart!rate!sleep2)]' role='measure' type='quantitative' />
       <column caption='Heart Rate1' datatype='integer' name='[heart_rate]' role='measure' type='quantitative' />
       <column caption='Light Sleep (Heart!Rate!Sleep1)' datatype='integer' name='[light_sleep (heart!rate!sleep1)]' role='measure' type='quantitative' />
+      <column caption='Light Sleep (Heart!Rate!Sleep2)' datatype='integer' name='[light_sleep (heart!rate!sleep2)]' role='measure' type='quantitative' />
       <column caption='Light Sleep' datatype='integer' name='[light_sleep]' role='measure' type='quantitative' />
       <column caption='Shallow Sleep Time' datatype='integer' name='[shallowSleepTime]' role='measure' type='quantitative' />
       <column caption='Steps (Steps)' datatype='integer' name='[steps]' role='measure' type='quantitative' />
       <column caption='Time (Heart!Rate!Sleep)' datatype='datetime' name='[time (heart!rate!sleep)]' role='dimension' type='ordinal' />
       <column caption='Time (Heart!Rate!Sleep1)' datatype='datetime' name='[time (heart!rate!sleep1)]' role='dimension' type='ordinal' />
+      <column caption='Time (Heart!Rate!Sleep2)' datatype='datetime' name='[time (heart!rate!sleep2)]' role='dimension' type='ordinal' />
       <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
       <column caption='Wake Time' datatype='integer' name='[wakeTime]' role='measure' type='quantitative' />
       <column-instance column='[__tableau_internal_object_id__].[Heart!rate!manual_1F87D186C097432EBB81E1B6FB820A52]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Heart!rate!manual_1F87D186C097432EBB81E1B6FB820A52:qk]' pivot='key' type='quantitative' />
       <column-instance column='[__tableau_internal_object_id__].[Steps_60E2B57754324356A4654F01DAF61A7D]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Steps_60E2B57754324356A4654F01DAF61A7D:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Attribute' name='[attr:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Attribute' name='[attr:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Avg' name='[avg:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[heart_rate]' derivation='Avg' name='[avg:heart_rate:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Avg' name='[avg:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Count' name='[cnt:deep_sleep:qk]' pivot='key' type='quantitative' />
       <column-instance column='[heartRate (Heart!rate!manual)]' derivation='Count' name='[cnt:heartRate (Heart!rate!manual):qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Count' name='[cnt:light_sleep:qk]' pivot='key' type='quantitative' />
       <column-instance column='[steps]' derivation='Count' name='[cnt:steps:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='CountD' name='[ctd:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='CountD' name='[ctd:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Max' name='[max:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[heart_rate]' derivation='Max' name='[max:heart_rate:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Max' name='[max:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Median' name='[med:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[heart_rate]' derivation='Median' name='[med:heart_rate:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Median' name='[med:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Min' name='[min:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[heart_rate]' derivation='Min' name='[min:heart_rate:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Min' name='[min:light_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='None' name='[none:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Stdev' name='[std:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Stdev' name='[std:light_sleep:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Distance_KMs]' derivation='Sum' name='[sum:Distance_KMs:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Sum' name='[sum:deep_sleep:qk]' pivot='key' type='quantitative' />
       <column-instance column='[heartRate (Heart!rate!manual)]' derivation='Sum' name='[sum:heartRate (Heart!rate!manual):qk]' pivot='key' type='quantitative' />
-      <column-instance column='[light_sleep]' derivation='Sum' name='[sum:light_sleep:qk]' pivot='key' type='quantitative' />
       <column-instance column='[steps]' derivation='Sum' name='[sum:steps:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='Var' name='[var:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[deep_sleep]' derivation='VarP' name='[vrp:deep_sleep:qk]' pivot='key' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='138' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
             <map to='#4e79a7'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[avg:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[cnt:steps:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[ctd:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[sum:light_sleep:qk]&quot;</bucket>
             </map>
             <map to='#59a14f'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[cnt:heartRate (Heart!rate!manual):qk]&quot;</bucket>
@@ -693,89 +747,20 @@
             <map to='#76b7b2'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[__tableau_internal_object_id__].[cnt:Heart!rate!manual_1F87D186C097432EBB81E1B6FB820A52:qk]&quot;</bucket>
             </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[min:heart_rate:qk]&quot;</bucket>
-            </map>
-            <map to='#9c755f'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[cnt:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[cnt:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[med:light_sleep:qk]&quot;</bucket>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub]&quot;</bucket>
             </map>
             <map to='#e15759'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[__tableau_internal_object_id__].[cnt:Steps_60E2B57754324356A4654F01DAF61A7D:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[max:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[min:light_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[std:light_sleep:qk]&quot;</bucket>
             </map>
             <map to='#edc948'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[sum:heartRate (Heart!rate!manual):qk]&quot;</bucket>
             </map>
             <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[avg:Calculation_1371064670952898561:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[avg:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[avg:heart_rate:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[ctd:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[max:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[max:heart_rate:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[med:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[med:heart_rate:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[min:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:Calculation_1371064670948810752:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[std:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[sum:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[sum:Distance_KMs:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[var:deep_sleep:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[vrp:deep_sleep:qk]&quot;</bucket>
             </map>
             <map to='#ff9da7'>
               <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub].[sum:steps:qk]&quot;</bucket>
-            </map>
-            <map to='#ffb591'>
-              <bucket>&quot;[federated.1aizte31fwydcf15c0yu60lmw8ub]&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -842,7 +827,7 @@
               </relation>
             </properties>
           </object>
-          <object caption='heart_rate_sleep1' id='heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2'>
+          <object caption='heart_rate_sleep1' id='heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A'>
             <properties context=''>
               <relation connection='excel-direct.1y7f4an1pmfxhy15k68xe15r9otb' name='heart_rate_sleep1' table='[heart_rate_sleep$]' type='table'>
                 <columns gridOrigin='A1:D139:no:A1:D139:0' header='yes' outcome='2'>
@@ -854,9 +839,21 @@
               </relation>
             </properties>
           </object>
-          <object caption='heart_rate_sleep' id='heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A'>
+          <object caption='heart_rate_sleep' id='heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40'>
             <properties context=''>
               <relation connection='excel-direct.1y7f4an1pmfxhy15k68xe15r9otb' name='heart_rate_sleep' table='[heart_rate_sleep$]' type='table'>
+                <columns gridOrigin='A1:D139:no:A1:D139:0' header='yes' outcome='2'>
+                  <column datatype='datetime' name='time' ordinal='0' />
+                  <column datatype='integer' name='deep_sleep' ordinal='1' />
+                  <column datatype='integer' name='light_sleep' ordinal='2' />
+                  <column datatype='integer' name='heart_rate' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='heart_rate_sleep2' id='heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3'>
+            <properties context=''>
+              <relation connection='excel-direct.1y7f4an1pmfxhy15k68xe15r9otb' name='heart_rate_sleep2' table='[heart_rate_sleep$]' type='table'>
                 <columns gridOrigin='A1:D139:no:A1:D139:0' header='yes' outcome='2'>
                   <column datatype='datetime' name='time' ordinal='0' />
                   <column datatype='integer' name='deep_sleep' ordinal='1' />
@@ -906,7 +903,7 @@
               <expression op='[time (heart!rate!sleep1)]' />
             </expression>
             <first-end-point object-id='Heart!rate!auto_B9E9293ECDDF4C68BB9DC408301349CA' />
-            <second-end-point object-id='heart!rate!sleep_20D9986E803F41D480C6CF861CF1DFF2' />
+            <second-end-point object-id='heart!rate!sleep_39A69D257860470B9337E3D254DBFB1A' />
           </relationship>
           <relationship>
             <expression op='='>
@@ -914,7 +911,15 @@
               <expression op='[time (heart!rate!sleep)]' />
             </expression>
             <first-end-point object-id='Heart!rate!auto_B9E9293ECDDF4C68BB9DC408301349CA' />
-            <second-end-point object-id='heart!rate!sleep_5FCF0CF8D4EF4F11855DD1CF17CAC04A' />
+            <second-end-point object-id='heart!rate!sleep_7085B0C932C349F6BA2BED02D9428E40' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[time]' />
+              <expression op='[time (heart!rate!sleep2)]' />
+            </expression>
+            <first-end-point object-id='Heart!rate!auto_B9E9293ECDDF4C68BB9DC408301349CA' />
+            <second-end-point object-id='heart!rate!sleep_8B7761C7DB3D4EC9B68A7EB0548B52E3' />
           </relationship>
         </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -1038,78 +1043,31 @@
             <datasource caption='Steps (Mi_Fit Data Final)' name='federated.1aizte31fwydcf15c0yu60lmw8ub' />
           </datasources>
           <datasource-dependencies datasource='federated.1aizte31fwydcf15c0yu60lmw8ub'>
-            <column-instance column='[deep_sleep]' derivation='Attribute' name='[attr:deep_sleep:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[light_sleep]' derivation='Attribute' name='[attr:light_sleep:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[deep_sleep]' derivation='Avg' name='[avg:deep_sleep:qk]' pivot='key' type='quantitative' />
             <column caption='Deep Sleep' datatype='integer' name='[deep_sleep]' role='measure' type='quantitative' />
-            <column caption='Heart Rate1' datatype='integer' name='[heart_rate]' role='measure' type='quantitative' />
-            <column-instance column='[time (heart!rate!sleep)]' derivation='Hour' name='[hr:time (heart!rate!sleep):qk]' pivot='key' type='quantitative' />
-            <column caption='Light Sleep' datatype='integer' name='[light_sleep]' role='measure' type='quantitative' />
-            <column-instance column='[heart_rate]' derivation='Max' name='[max:heart_rate:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[heart_rate]' derivation='None' name='[none:heart_rate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[time (heart!rate!sleep)]' derivation='Hour' name='[hr:time (heart!rate!sleep):ok]' pivot='key' type='ordinal' />
             <column caption='Time (Heart!Rate!Sleep)' datatype='datetime' name='[time (heart!rate!sleep)]' role='dimension' type='ordinal' />
           </datasource-dependencies>
-          <filter class='quantitative' column='[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:heart_rate:qk]' included-values='in-range'>
-            <min>50</min>
-            <max>130</max>
-          </filter>
-          <slices>
-            <column>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:heart_rate:qk]</column>
-          </slices>
           <aggregation value='true' />
         </view>
-        <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1aizte31fwydcf15c0yu60lmw8ub].[hr:time (heart!rate!sleep):qk]' field-type='quantitative' max='23' min='0' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:light_sleep:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
-            <encoding attr='space' class='0' field='[federated.1aizte31fwydcf15c0yu60lmw8ub].[max:heart_rate:qk]' field-type='quantitative' max='150' min='50' range-type='fixed' scale='log' scope='rows' type='space' />
-          </style-rule>
-        </style>
+        <style />
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Area' />
-          </pane>
-          <pane id='5' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1aizte31fwydcf15c0yu60lmw8ub].[max:heart_rate:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Area' />
-          </pane>
-          <pane id='6' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:deep_sleep:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Area' />
-            <encodings>
-              <color column='[federated.1aizte31fwydcf15c0yu60lmw8ub].[:Measure Names]' />
-            </encodings>
+            <mark class='Automatic' />
             <style>
               <style-rule element='mark'>
-                <format attr='mark-transparency' value='255' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='7' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:light_sleep:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Area' />
-            <encodings>
-              <color column='[federated.1aizte31fwydcf15c0yu60lmw8ub].[:Measure Names]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-transparency' value='96' />
+                <format attr='mark-labels-show' value='false' />
               </style-rule>
             </style>
           </pane>
         </panes>
-        <rows>([federated.1aizte31fwydcf15c0yu60lmw8ub].[max:heart_rate:qk] + ([federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:deep_sleep:qk] + [federated.1aizte31fwydcf15c0yu60lmw8ub].[attr:light_sleep:qk]))</rows>
-        <cols>[federated.1aizte31fwydcf15c0yu60lmw8ub].[hr:time (heart!rate!sleep):qk]</cols>
+        <rows>[federated.1aizte31fwydcf15c0yu60lmw8ub].[avg:deep_sleep:qk]</rows>
+        <cols>[federated.1aizte31fwydcf15c0yu60lmw8ub].[hr:time (heart!rate!sleep):ok]</cols>
       </table>
-      <simple-id uuid='{94253BFB-0AEA-421A-ABA6-73D0203283F1}' />
+      <simple-id uuid='{E4AA700F-EDBD-47E4-A561-3F4DF70A3DBE}' />
     </worksheet>
     <worksheet name='Steps'>
       <layout-options>
@@ -1213,8 +1171,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='15' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='11' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone fixed-size='280' h='36250' id='3' is-fixed='true' name='Steps' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1278,15 +1236,6 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[:Measure Names]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:Steps (Steps) (bin):qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[yr:date:ok]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
       <simple-id uuid='{9C469006-69EF-49D3-AE88-2B6A35D9AE8C}' />
     </window>
     <window class='worksheet' name='Heart_rate'>
@@ -1310,14 +1259,6 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:Heart Rate (bin):qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[yr:time:ok]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
       <simple-id uuid='{C0637F5D-2C1A-47B9-947F-F8861E999C86}' />
     </window>
     <window class='worksheet' name='Deep_sleep'>
@@ -1341,15 +1282,6 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:Deep Sleep Time (bin):qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[tyr:date (Sleep):ok]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[yr:date (Sleep):ok]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
       <simple-id uuid='{4368D4E0-1BE6-47A0-8EB0-6FAE33AE7174}' />
     </window>
     <window class='dashboard' name='MI_FIT DATA'>
@@ -1387,611 +1319,8 @@
             <card type='title' />
           </strip>
         </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card pane-specification-id='6' param='[federated.1aizte31fwydcf15c0yu60lmw8ub].[:Measure Names]' type='color' />
-          </strip>
-        </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[hr:time (heart!rate!sleep):ok]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[hr:time (heart!rate!sleep):qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:Calculation_1371064670948810752:qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:deep_sleep:qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:heart_rate:qk]</field>
-            <field>[federated.1aizte31fwydcf15c0yu60lmw8ub].[none:light_sleep:qk]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
-      <simple-id uuid='{9F9FA898-A044-4348-96CC-7D3174BEE900}' />
+      <simple-id uuid='{C756B108-51DE-4AE3-B196-830D106C417D}' />
     </window>
   </windows>
-  <thumbnails>
-    <thumbnail height='192' name='Deep_sleep' width='192'>
-      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
-    </thumbnail>
-    <thumbnail height='192' name='Heart_rate' width='192'>
-      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
-      QmCC
-    </thumbnail>
-    <thumbnail height='192' name='MI_FIT DATA' width='192'>
-      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAAgAElEQVR4nO2daW9bV5rnf9x3UiJFUYslUZIly7YSR3a8JXE5W6c6U6hOoStV3Sig0j1o
-      1HR9gX4xwACT1/OmMR+gMMD0DDCYwtReXeikKp3KYifeZMuyJEuWqI0URXHfl7vMC0WKFJES
-      KcvaeH9AgFg8y3Mu+b9ne85zVLIsyygo1CnqgzZAQeEgUQSgUNcoAlCoaxQBKNQ1igAU6hrt
-      xn+EgwvMLoZwedpxOUzY7Y6DsktBYV/YJICR8SmuX38NtQp+8fP/iXfgIgOdbsamZunsOUV0
-      2UcuW6Cte4BMeJ54FoaGBpVuROHIotq4D1DMJrl3/yF6m4tSPsrliy/xb7//Da6WdpaWIzjd
-      Dl6+eJkbn32GRhbQ2ps5f+4MqoNsgYLCU7BJAL6pcaLJLEVZhU1bIqeyYVXlSRdl3C1tTI0P
-      09jgQmNqxKzOszA9zbk33sFtVvoAhaOJqpad4Bu3v+Sli5efpT0KCvtKTQJQUDhuKGMXhbpm
-      TwSw205kN/kOe12H3b79rOsotGlPBCBJ0q7yiaK4L3n2s67Dbt9+1nUU2qQMgRTqGu3OSfaP
-      VCrF2NgYly9fZmpqioWFBXQ6HVarFVEUcbvdtLe3H7SZCseIQ9UD2Gw2rFYrAE6nk3w+j9Vq
-      JZPJ8PnnnzM3N3fAFiocNw5VDxCPx5mdnSWfz2M2m3G5XKjValpbW/nHf/xH0un0QZuocMw4
-      VAJoaGjgO9/5TsXPjUYjgiDso0UKx51DJYA/3pnkwXxi2zQ/efMUdrt9nyxSOO6UFYAsFnnw
-      4CGSDN7+MzhtJpBlYokEDTYLgeUoTQ1mknkJt3PvXKbTRZnl9O6WwRQUdkNZAUQiMTp7ThJe
-      XqaQToDNhCQUiSczZFNJVKKEL5THiIyrwYYkSbvaiJAkadOQppoyvplnt3UdpjzHta6j0Kay
-      Amhq9jDx4B5T00u8+derY3JZFgn6F/B43CTiGewNJlJ5GbVajSzLaDSamo0WBAGt9msTVKqd
-      HavVavWmPLut6zDlOa51HYk2VfrQ1eTk0ZNZwsEwHS1NaPRmrl69UrNhCgqHmYr7AKlEjNaO
-      k9jMhv20R0FhX6ksgFyWsZv3MNlt+2mPgsK+UlYAYiFJNFnCO9SPfr8tUlDYR8oKIDA+RVGr
-      IzkbILXfFiko7CNlJ8EmTzMvdDpwXnwB3xMf9pPd+22XgsK+ULYHaGo9QT4W4OFjHz093n02
-      SUFh/6gwCVahNzrIRiPI6sMV9CQQCDA+Pg7ARx99xPj4OL/+9a+Znp7mgw8+UHyFFGqi4iqQ
-      kItRlHX7aUtVtLW1rZ9AMxqNTE9Po9frGR4eRqVSEYlEDthChaNExY2wcCSBVMhSEiV0mr07
-      NnDjxg3a2toYHR1lYGCAmZkZhoaGcLvdVeWfnZ0lGAyi0WgwmUwMDg4yOzvL4OAgk5OT2GzK
-      sq1C9VQUgEFTYNa/Qu9yhO626n6c1bC0tIRKpUKn05HL5XA6nTgc1TvUeb1enn/++S1/A+jo
-      6NgzOxXqg4oCMFrt6OUI7Xv44wcYGBgAoFgsUiqVSCQS5PN59Prqdhz+340potnKh/CdZjX/
-      8S8v7ImtCsefCgIQiSdErrw0uGcVrf3g197WXq8XURTXnegymUxVJ/ujWUlxmVbYM8oKIBcN
-      4/S4eOxb5uTZvaloYiHC//p8+zO9HmvtHqUKCk9D2dltKZ/j/qMZutwNlPbbIgWFfaSsAFR6
-      G5cvDTEweJqj6As6OzvL0tISAGNjY6RSKUZHR0kkEkxMTBywdQqHifKuEBYdn/7pU8bNDq69
-      /gobdwMi/nmCWQGLViSVk3juzKl9MrV6TCYTs7OzWK1Wbt26RSKRwGQy8dlnn1EsFtcn4goK
-      ZQWgNdlpbWokGEoiwiYBaE1GcgtzaFubsZllJEmq6kikLO8ufOJu+OCDDxgaGiIej2O1WvH5
-      fKjVamw2G5lMpurd4qNwpO8w13UU2lRxGbTv1ElU1hjGb/zdYrXhPnGCFqeVZF6q+kikSrV/
-      Mbh+/OMfry+xvvvuu8AxPtJ3iOs6Em0q/5HI5OQcapWWPGwSgVZvouuECQC3uWY794WR6aX1
-      /w8kVv9flqV1ETqtBk54nAdim8LhoqJkcqkooQzs3U7A/rHTcutLJxsVASgAFQWgQW8w0mpV
-      /GoUjjcVB+be3m5KpeJ+2qKgsO9sOzMtZHMoTgcKx5mKAkjE4sig3AGscKwpHxtUKKIxGFHp
-      dRxH7xxJkvj44485ffo0Wq2W4eFh+vv7iUQiaLVaDAYDTU1N3Llzh9dee42ZmRkKhQIAPT09
-      3Lt3j56eHk6cOHHALVF4Wsr2ABHfJKK9lUa95lj6AqnVasxmM/F4HKfTid1u5+HDh2SzWQRB
-      IJ1O09DQQCKRQBRFEokE4+PjtLS0kM1m6ezsrCqMo8Lhp3xs0L6zREYf0Njh3bIRdhwoFotk
-      Cqvu13fu3CGZTNLV1UUgEEClUmEwGAiHw5jNZqampnC73ZRKJaamptBoNMzPz/Pyyy8D4Pf7
-      aW9vZ2JiAqPRSDabpaOjg2QyqVzndASosAyq4tTgC7sudH5+HqvVitN5ONfa9Xo9r730Gtls
-      FrP56928wcHNux7f/va3KRaLmM1muru/Dg1z5cpqjNS5uTlGRkZob29ndHSUq1ev8vnnn/O9
-      732Pf/3Xf+UnP/kJH330EefOnQNYH2oBZLNZdDodvb29z7q5CtvwTC7ICAaDSJK0/kM5bIQT
-      WX514/G2aax6FamCtO1Qp7EUJBgMEo1G6ezsZGRkhMbGRj788EMEQSAajRKJRBAEgebmZux2
-      O62trUxOTjI+Pr4uBoWD45kIIBKJHOpbXBI5gcmV2LZpPFbNjifP/uv3X+T69esEg0EuXboE
-      bPZJEQQBt9vN3Nwc8/PzJJNJfD4fU1NTeL1eMpkMs7OzjI2N8cYbb/DJJ5+QTqcxGo309vZy
-      8+ZNzpw5w+nTp5menmZwcHB9qJVIJOjp6cHn8205I12OYrHIjRs3GBgYwOFw8PDhQ7q7uwkG
-      g/T397O8vExra2uVT/D48EwE8Pbbbz+LYg8dM4EIsjoJQGi6vM/Rq6++umWotfHNHwgESCQS
-      pNNptFotsiwTi8V49OgRRqMRWZb5+OOPaWtrA2B0dJTr168jiiJ/+MMfGBwcJBAIsLi4iEql
-      4sKFC9y+fZvu7m7u3LlDd3c3kUiEV155hVOnTiFJElNTU0xOTtLS0kI4HCafz5NOp4nFYgwP
-      D/POO+/g8/kIBoPk83lUKhVqtZq33nqL3/72tzQ3N3P16lV+//vf88orr/Dhhx+ue9quOR9W
-      IpVKcefOHaxWK4FAgHfeeYexsTECgQCyLKPVakkmk1y8eHG9zbtBlmV+97vfcf36dT788ENe
-      ffVVEokEt27dwmq1YjAYWF5e3r0Agv55EjmRU1+FTdzogFaOUOz4RRn94OHytr1Ev9tAk2Nl
-      2zKe67DT39/P0tISAwMDJBIJLBYLKpWK5eVl+vr6EEWR8fFxOjs76ezs5M6dOywsLHD27FnG
-      x8d54403OHv2LAsLC6jVaqxWK83NzXg8Hnp6etZv1wwEApw9e5bp6WlKpRK3b9/GZrMRDocJ
-      h8O4XC5MJhOFQoGJiQnUajXd3d0YDAYePnzI4uIi/f39TE5Oolar6enpQZZlnnvuuXUR74TN
-      ZqO5uZlMJkNzczOwemhJEAR6e3vJ5/N4vd6n+vHD6mUra/YNDAzgcrkoFApYrVa0Wi2SJKHX
-      63cvAAENFuPXq6jKed+tVDPU6nAaGRgYWA8QYLFY1j9bG0ZeuHCBS5cubRpqwebh1uTkJP39
-      /czMzDA2NkZjYyN2u53h4eH1YAMXLlxgZWWFy5cvc+3atS22lEol0uk00WiUH/zgBySTq72b
-      zWZbX/6dmJjgtddeY2JignA4DMDKygqnTlV3eWE8HmdlZYUzZ86QSqWYmJjg3XffXV9q7u3t
-      ZXJykmQy+VTDaEmS1oOkrayscO/ePdxuN319fRgMBvR6PaFQCJW8m8u9gHh4mUReoutEK6Io
-      8p//9+1t01czpt6LNPtVz37a8uOrbcjqrVH61oZbeo2KAW8LgiAgiiIGw9aDrLFkmoWV1KZ8
-      W2xxGLGayoen2RjBo1qedZ6NL4ty5wHWIpFsV9eue4CGJg8NsH4i7PXB7SdQVr2adHHzqTBZ
-      ljetspRL800sehWZYmXNVipjY13V1GPVq0kVxG1XgXZqU7X1pIvSlmexkURBRbq41TFxLY9V
-      r15/WwPru9YbSWYKBBLFLTZuSpMTKtoryzI2g6bq9mxXz3bPZWObtqvLqldz9bRxU75vhtUJ
-      J3OMzMcrliHL8u57gI3sRum7zXfY6zrs9u1nXUehTXsiAAWFo4rm/ffff38vCoquBFmJZ9Co
-      V6O8mUymimnzmRQrsRQqJDKZDEaTaWevU7HI5NQUsqhGpIiADn0VQXvDywGWoyl0GtWOdm1k
-      bm4OrVZbvX3Agu8JRVmLLOTJZIuYTDsHlUlEQ6vPTSVXbZ9YzDL1ZIpCVkSlEWt6FqFYCm0N
-      z2Il6CeWyqOuwb7Z2VkcNhPj41NojSaEXAaN3oh6m+FkZHkeQWMl4J+n0WYgmS6QK4oYDZUj
-      lIvFHP7lCBqxwMziMka9jkwmvaONq3VZWJp/sv15gFrIFQU0UomFqYdkpe3DqhstNtSyQDQU
-      YCWWrM7lWq3D5WygmIrwaDaARV9dd2c2m8lmM1XZtUY6HiaRztVmH5DJZJEkibu3b2NxVHea
-      bikYpFgo1mSfRm/GabNj1Ag1PYt0Ok06U9uzyOdzLAeXa8pjNBqJB8N4T7UxNTHLQjCCdod7
-      JlyNVrI5EZPRBGKO2/cncdi2/yFr9CZ0arDY7Rh0OoJ+H/HUzu6bq3VJGI2GvROAWhLIliQ8
-      Xf2o8slt02ZTcfx+P3pbEzaDDqmKQZhUTOFbCKExWOhudZHKVeenmk6nUKvVVdm1hiBKFDJJ
-      dBZn1fYBmC1mCoUCZ04PEIskqsrjbHRSKhVqsg9A1hkwm8w1PQutVoOmxmdhsVhxNDTUkEci
-      FAyQR+LJ2ByejhbcjWYK4vYPMRhcIRJdIbzsJxTNMNDXSTSZ2TZPKZ/BHwgwNTVDoVikwd2O
-      XrvzEa7VuoJkMgVlDqBQ3+xfsB4FhUOIIgCFukYRQJ2zsjTPvYfjJBPVzz+OE8ocoM6ZeTxC
-      KA3L0xN0eNu4NRHg/AvnUOeCzMc1/PW3XzloE58pSg9Q51gsdlLJBD0ne0Bt4MILz5HMFdGa
-      GhGT4WN5JnwjSg+gsIVsUcKsr493oyIAhbqmPmSuoFABRQAKdY0iAIW6RhGAQl2jCEChrlEE
-      oFDXbBLAJ5/8OwBzd78ktPVY6WaKMcYfL1dVyejE+K6MU1B41mw6FC/mM9y9e5flxzNcOHWW
-      f/v3L0Gl4tq1FxkfnyKeLmLS5dFqzThtGu4Oh2hueRWX46ugT4UQ//LzL7j++lUykUXmZ4M8
-      f+U8d+/epaHRyeT9YUDFxdffwqZToisrHDybegCN0cKFCxc4e6oHIR1iJSdjNaiYnp6nIMnE
-      wjHQmbl46TInezrp6z/z9Y//K/oHztHZbGRuIUIpGUVj93Cyr48TTj3LKzksVgOZKg9wKCg8
-      azb1AF1dXgAcre3omto53xsnL2joaGtm0uenp7cLt9uxekTQ4EIvzTAzLRKLr4aeONHRSnub
-      AzRmml1WpEYrFg04jXr8MZkL53tJ5wXsxmcSkVFBoWYUVwiFukZZBVKoaxQBKNQ1Tz0YXwuN
-      WC3bhQDc63z7Wddu8yk27k2+3dZVtQDEYpYnM/M0uZsJx5O0e5oolUo0NjYiy3LVYenKBTF9
-      Vvn2s67d5lNs3Jt8u62r4hDI9/gef/r9Tdb2w9Q6E84GC5FYCqdBy0JggVgyW3OFR5lQKMTP
-      fvYzxsbG+PnPf37Q5ijsARUFoNEZSOaT6/cEF1MrLIRSmI0agskMzU0eDDoV9bSE1NzczNDQ
-      EFarlatXrx60OQp7QIU+o8Stz0dobGlnbXRvsDdz/vnVGz3q9XpoSZLo7+8nHA6zsLCgXJR9
-      DKggAB1DL57i7nCg6riYx5VMZnN4PpVKhdvtxu12b/lMp6sudqbC4aHirMHmbMXdEEYE6vlr
-      Lf3pfcyZ7a9/Wk/7V/8Dvb78DSsKh5OyAojMPObB/AKpvGY9gVTKs7Aco8lmYCGc5MSGVSAF
-      haNKWQFozVYMOj1qu2Z9kqvWGTFo1aQzGZAklgMLqAx2HA4HkrR6xU81SJKEIAg1G7qbfPtZ
-      F6zeOHLYbTwKz3E/bSwrAEdLO2e1RvQy6wIQi1n8fj9tba0IhTTONg+lfB6VWo1a2QcAQKPR
-      HHobj8Jz3E8bK64CffxvH+Lp7eMltwtYvZThwoXzAHV5o7jC8aTCPoCOwbM9SBJU7+SgoHD0
-      qLgRpjVoCc4u1dVGl0L9UVEANmcrniZzpY8VFI4FFQUQWpxgcTZN7fNqBYWjQ9lJcDYRZnEp
-      TriY2LIP0OwwMR+Kb/IGVdjK/Pw8o6OjeDweYrEYb7755kGbpFCGij1APprjzNCZrxN+tQ8Q
-      SaRwGHTE0ili0crX0B8V8vk8H330EZIkcevWrT0rN5PJkMvliEQiWCyWbdMKgsC9e/dIJBJM
-      TEzsmQ0KO1O2B9AZbLz1w+9jNn590bNYzLKysoLH00w8naOtwUXRYDzyk+SHDx8iSRIjIyOk
-      0+k9K/fkyZOk02lOnz7N8vL28ZOmp6d58uQJsViMZDLJwMDAntmhsD1le4BCKsKvf/kbbty4
-      vX5DiEZv5rnnBmlubqa/pwur1YqzsfHIO8t5vV4EQSCfz7O8vFzT6bZvks/nyWQyZDIZisUi
-      Z86cQaVS0dLSsv73tf9E8ev7bEulEoIgkEqlyOVy29ZRLBYZGRmhWCzy4MGDiulkWeZPf/oT
-      Kysr/OpXvyKTyfDrX/961207rlSMCvHk0Qi+xQjXv/0aO7l3iaJ4bHeC47/5p6qd4bKWrpoc
-      5ywWS802Dg8PMzo6ilqt5vTp05w/f75i2kePHiGKIq2trfzyl7+kWCzyk5/8BIPBUDFPOepw
-      JxjMVjMme5HqftZHi8i9X6ErVp6/7PZ8aS3kliaQNCKyJKNSb1+Xof2FdS/T3t5efD4fTU1N
-      PH78mKGhobK2SpLE/Pw8fX19DA8P8w//8A8Eg8GqX1T1QsUeIBKOoJfB4HYdux7gWb3Vn1Xa
-      td5iI4fhOR6mfHvuC/Tlp59ibmrl2le+QAoHx1pvsZFKPUf2yacYcsGqytW98f6OK1THnYon
-      wlpamyii27LKEw0tEUoVaG60UygUFMe4fUA79n8wVNlbiLX0LE9j1DGhYp9h0qm4c3eMF66c
-      35RIrdEgZHOExRwavW09LtBxOg9QL2w8v7C4uEh7ezuBQACVSoUoinR0dAB1eB4AoKm1g9bm
-      xJZlTq1Wg9ZooLW1mVKpdCjPAxSLRW7evMn58+eZmZnh3LlzNddXD6ydX5BlmcXFRZqbm1lZ
-      WcHr9TI5OUl3dzdQl3MAEIQSDnfTlvPAVoeLAcfhnhfMzMwgyzI3btzA7XYftDmHHlmWmZmZ
-      oampidHRUUZHRxkaGiqb1u/3k0wmKRaL5PN5YrEYvb299PX17bPVe0NFAaRTaYqZHALsuAp0
-      2HC73YyMjNDY2LjtUqHCKmq1mvfeew9gx13o9vZ24vE4DQ0NSJKE2WwmlUqVTRsIBNY3BXO5
-      HNFolN7eXk6dOrXnbdgtZQUQfjKGrXuQDnH8mR+Iefz4MXa7nZGREd58881th1K/+93vMBqN
-      LC8v8/bbb+N0Osumc7lc/PCHP9x1t1gvlFtdKodsasLe0gPA7Owsfr8fs9lMY2MjyWSSkydP
-      ls3X1tbG48ePaWhooKGhAb/fvyWUzBp+v5+lpSW0Wi0LCwuIoshLL71Ec3Nz2bTJZJKGhgZ8
-      Ph82mw2dTldWvH6/H1EUiUajmM1mQqEQnZ2ddHZ2AhUE4PL2cPOLm2jMdr6p1WX/PIuhBC2t
-      boq53Po4cTcIgsDc3Bz5fJ6rV6+yuLhIV1dX2bTJZJKlpSUsFgsWi4Visbjp88TcCGopv+lv
-      1Wwy1TPVri7lu/8DfCUAr9eL1+utqvyNYmloaKCpqQmXq/zwea1n0Wg0WCwW5ufnmZiYKCuA
-      tbQffvghAKlUip6enrICaG9v59GjR0QiEXQ63foPf42yAlBpjbz0yitlDS2JMs0NNtLJOBr9
-      060hFwoFSqUSVquVGzdu8NZbb1VMa7fb+bu/+zuKxSJjY2N4PJ5Nn8sP/qXqpcKspbzIFMoj
-      RKaJ/+afqkornngZ1/nvAatiqdQ7fJPZ2Vni8TiNjY309fXR0dFR9se/ltbv9/Pee+/h9/vx
-      eDwVHQ5nZ2eZmprC6/WSSqUYGxvj8uXL65/XfEOMJBQIhpM0OR2IooDRZEZ6RjvBuVxu3Tlt
-      p93mWgJYHYbd3aOUtpYy0/ZTqMX8zgmBYusVLGf+csvfy33XarUak8lUsazdDnef+oqktX2A
-      aieZkiShVld3L4eYDKLOR1fzyRJqVeV8osaARtx8t2ulPOXSVsq3U9qNCCo9Wrm4c8IN5e7U
-      rko27GfbdtOu7WzcydZy+Up6ByVdQ8WyNvpvaTQajEZjVfbu+x1htQjgafPtZ127zafYuDf5
-      dluXckmeQl2jef/999/fn6pkRkZGUEklFpYiNLmqO0u8tDBLJJklHl4ikS3SYLdVUZXA+KMx
-      VMg8mfbR4PagrWKElklGGX34iJIkshSs3sbA4hz+5Sjp+Er1NgLTk+PkSiKLvhnQm7GYdvbT
-      n5ycxGHSMjo+SVEQmVsI0NzctO3BJLGYw7cQxKCB5UiCdCxEKJrG2ejYsa4Gq4mpJ5Ok0gUW
-      /MGq69JR4vH0PEI+WVVdmWSclVgSAyWezIeIhRYoiBps1u0jk0SCM2QlK/NPHoFK5sn0DEab
-      C6Nu+95gcnKSRpth/y7JW5qdJBCKksjLWC3Vx5vWaDTkcjm0RgsaVZW+HvkoiZKGuUCIM11O
-      opnqdjMsdidujwe1Sl2TjUKxSLFYrM1GQKvVEg36sHtOUsgmqspjt9tJxdKcPNPF0lKSVoeF
-      nUbnGr0Ji1GHxeZApwY0eoy6nd8IdrsdjU6PxWxHpVbVVJfZbEYUBOQq67LYG9Ag8Wh8gng0
-      gtnWiFTa/nQcgMvZgCCsuuJEA8t0nu4jFdv5WdrtdlLh6NNfklctrd5TmBs9IJaIpqv3Q9To
-      tBgMarQIqAzbv0XWMbnx2GLYG1uZXIozMFClzqUSDocLWcjUZKPZYqGkFmuzEdDptLR6B0mG
-      5nCfqGa5UCIeWcHZ3EJwcomBvhaCkQQ7OXuU8hlWVlYAWFmJ4Wl2UJR2+upX6xIKeRK5Ap4m
-      F9Fkpuq6RFHCZLZg1KrJ71gXJKMrrEQSvHDxCql4gmR8BUvjzp7GweUYKTGHVqvD7mkjOOXD
-      23+6qrZpPK3KHEChvlHuCVaoaxQBKNQ1igDqgInxUR48GC772YJ/ESjyb7/7DQ8nZgDwLyxu
-      SnPv3j3GRycAgXhs1fPzyegw8fzOjnSHHcVVsg6YezJBMFliceohamcXKxO3sdh6aX2+n6nx
-      MX78t39FyD+Pq6uHn/33/0ZYbOZbL3Zyd2yR//TTd5EFPbPzEwSjPiR/lLBWx4svXeHxRIDL
-      L3QcdPOeCkUAdcDg0GUGRIFSLo3KaMNt1mLQNdBz9ixmuQRoeP3t75LL5Xju0suotBaaXVZU
-      pibUGJHUeU50tGFucqNqTHHK2UgiGqG16+hHsFNWgRR2JJNOY7FaN/0tlUxhq3LD7zCjCECh
-      rlEmwQp1jSIAhbpGEYBCXaMIQKGuUQSgUNdsEkBkeZF79+6TzlfvCSkJBR7cv08ik/9qV1FB
-      4eiwSQCPHk8x9MJzfPHxnyhIsDj7hFA0CbLM5Ngo6bxAMh5nfPQhueLqNvhnn33B6cFBitk0
-      CwE/AEvzMwTD8c35EnEmHo2SKSixOhUOD1uGQCq1hue6bIw8GCEsWpkYu8/DuzdxdvRy986X
-      3Lt9l+6+Pr64eQOAgZMd3PrySxKZ1cPN2dAUCxkdTyYe8mBDvpFbd+k82ccXX9zY3xYqKGzD
-      FgHIksj4YpYOh4rxhw8olFQU8mke3B9GqzVhMFrQIqFSr4atkLVmrl65zNzsJACSJPL40QiF
-      vERuQz6d0YReLe8YAUFBYT/ZtBMcWV5kzh+m/8xZrEYdC74pRJ0Nb3szj8dGaWz1Mjl8F5vb
-      zdnBs2jVKvKZBONTs5w6c5ZSPovDbsc/N01BZaKno2U93/SDu5icTZwZHESvUaK1KRwOanaF
-      SCaS2B32mivabT4FhWeJ4gukUNcoA3KFuqbseYCVpQVm/UE0KhVGm4sz/ZUjQNdyQ2Q59iKE
-      uVLG4bJhL8rYLxsqX5Q9McnDe/d4+0d/ixFAKvJobAp3cxPBYJjTg2dQy7XFBS3HbkPaKWUc
-      Xhv2ooz9sqGiPNRSjjNXv7V+O4yQCpORdRSCYU63OkiWVLgMq2/+euwBPv/8c9ra2vD5fFy/
-      fh2NRnMo2nIYbNiLMvbLhorysNrM3Lr5KZNTq2GxtfYWmgwyXW0efLEizp2j+B1b0uk0Pp+P
-      paUlMpkM8/PzB22Swi6pKI9INIwBCz29Xx16Vqnp6V+9L8bV1LQvxh1WzGYzHo8Ho9GIWq2m
-      vb39oE1S2CUVBeBq8eJZzqF6ynHYcUStVvMXf/EXB22Gwh5QVgDZiJ/7o1PIKvW2kYDriT/c
-      v0equH1o2LVLGnpdTVzore5qoI08ePCAqakpmpubMZvNvPjii3zwwQf09/dXfS+XQm2UFUAq
-      kkZn1FEIpcjLMlblilHu+hcIZMvfcFiO3Qjg5MmT3LlzB1mWKRaLXLhwgVgsxvj4uCKAZ0RZ
-      AWjsZqwJPZZ2JwtP5jjd591ns+qXixcv0tfXx8zMDIlEgmvXrpVdZl67/jOdTlbxhcEAAArb
-      SURBVNPe3s7o6Ci9vb00NTXx5ZdfbroITqEyZQXQ1NKBy91KtlDCYq58MZnC3rDx7lyv14sk
-      SetvfIfDsSWNxWJZv/7zxIkTxGIx7HY7gUAAjUbD7OysIoAqqTgJvn/nNpFohpfeeh2zRpkI
-      P0v++eM/Vj28ajNb+C/feWf9+s9sNkuhUCCdTuP1eolGowiCsH6bu8L2VBRAU4OFuXCK8HKE
-      zradrkVQ2G8qXVgtCAKnTn3zenOFSlQUQDQZZmksiPs7X//4QwtzGBudLPpDnD7Vq6wQHRD/
-      99YXFT/beF0owBVvD50VLpxW2EYAdpudE92d61vFUilHLLxCUdRy0mkgkpdp1K36Aj2NR7Uk
-      SQjC050Tftoy/vznP9Pb28vjx4/51re+hd/vJxQKcenSpV2VJ8vyuj3379/HbDazsrJCd3c3
-      ZrOZ4eFhrl27tuut/o/nZqpOe7LJTZvTWVP5h+E72S8bKn4DZlsDKmOatavihJJASZLQywJT
-      wQxnmk6gUR1OX6BCocAf//hHOjo68Hg8eDwebty4QU9PDy0tLZvySpJENBrF4XBQKpVQqVS0
-      t7eTSCR2bZdKpVrPu7Kygs1mo6urC41GQywWIx6PI4pi1Zc5Pw0qtarmdtSTL1D5jbBEmElf
-      EJNJg8iqw5DebGPwwu7eiPvNH/7wB0KhEC+//DKpVIpkMsnNmzfRarVlBeB2u5EkCZ1ORzAY
-      xO/3P5WoN2IwGNBoNNy6dYtLly5RKBSwWq1P/XZT2BvKCiC95Eej1xMNRhGA6i8MPRx873vf
-      w+/34/P5EAQBm83GT3/6U0qlrfGOtFotr7766qa3xV5uOr3++usAXL16df1vg4ODe1a+wtNR
-      VgDuvgFCj+c59fpJnn0n/Wxob2/f1knt7vQTpiPh9X9/c/L4NIRSyW0nqgqHh7ICUGkMOAwS
-      E5M+rlxxsjeDgWdLJpPhnz/+Y9XpDRoNvlSy6vRtZkvVaeP5HGPR8M4Jd1G2wt5ScYaQSURZ
-      nF1ivrOT7gPeB5AkiU8++QS3283CwgJXrlwhk8kQCoUYGhpaT1eLr069/eg+++wzrl69yi9+
-      8QuGhoZ48OAB3//+9/H5fPh8vvWh2hqpVIq5uTlsNhuLi4vY7asRPZ577rmDMP+ZUVEABTFH
-      dCFNyyHYBFOpVHR2dmIymSgUCjgcDm7duoXFUl8/4t0iSRIzMzNoNBpKpRLBYJBwOEw4HObW
-      rVucPXt2Sx6bzYZKpaKxsZH79++Ty+X2bGHgMFFRAK1tHZx7uelQTIAFQeDOnTtcu3YNq9VK
-      IpGgq6uLubm5gzbtSKBWq3nvvfeAryfjr7zyCgB/8zd/UzZPPB5nbGwMURTR6/X7smR7EFQU
-      QDqV4skjHy++9Px+2lMWnU7HD3/4QwBaW1sBaGhoULb8qyAYjzM8W93GmUGt4UxnF7D6fH/w
-      gx8A8PzzB/8beFZUPBDzxJ/E43UdaOCgb67UVEKWZSxPuWlyXLnrXyAwNVFV2jazhdHgUtUr
-      Yt997hwm09H2Fi6/DxD9+kBMYT2RzOLcHJ72E4RCYdrbWspl3VOmI+Gqt/3rbVL7rKjFzeI7
-      Z4/+hLisABo7vFzu8GI2bgj9IJYwmE08Gp2g1WUhXpSxacr7An388ccMDQ2t+7Jvx3b+GkrU
-      xsONKIoVv7sj7QtUSEX47R8/p6vLy8WXLqIDJCHPxOQsJ1rdLK0kONWmWl8V2Lg6kEwm6e7u
-      Zm5ujvPnz+9o5Hb+Gnu1MaXwbNBoNBW/uyPtC2R1t3Hx+VP4FiOsvYPVBjvXXt75lJHFYuHP
-      f/4z586dq9lgBYX9puIc12w1Y7Lbat4F1mg0fPe736Wzs3PbdMvLyxSLRe7cuUM2m0UQBO7d
-      u6cMe44YkiTh9/uJRCLcunWLaDS6fnxzZGSEXC53wBZuT4X+QSQYjGHVaCnBtiL4eGKMSKa6
-      HdiN4UJisdhqTaLIzMwMOp2OJ0+e0N/fj9VqraEJCgdJNpslFAqRTCbxeDwUCgWi0SidnZ2M
-      j48jy/KhHg1UHCDlUlFCGdjJb/F+cInpGvxe1gQQDAZZXl6mUCggSRJ6vR5BECjuEHtH4XAh
-      CAIPHjzg4sWLDA8Pc/r0afx+PxaLBVEUt/QAa9EsstksOp2OQCBAX18fLpeLTz/9lG9961vr
-      43ZZlvnyyy/p6+vj9u3btLW1kc/nuXTpEplMBp/Pt8mzdq3scDiMw+FgcXGRnp4eHA4HX375
-      JdeuXduyoVdBABr0BiOtVtvePq0NvPrqq8DmiYoSyeDo0dDQwN///d8DrLtUvPDCCwiCwI9+
-      9KMt6deiWYyPj9Pf308kEsHr9fLo0SMEQSCfz6+PAFQqFTabDZfLRfNXxzonJiZ48cUXGR8f
-      R5KksmUnk0n8fv96xIwTJ07gdrsRRXGLPRV7AG9vN/NL8d09lQqk87ktu5KyJKNSl1/tSecP
-      9/ix3nkSXEKqEDHkm9/r2i7zWjQLr9dLOp3G5XIRj8dxOp0sLy+Ty+XWBSBJEuPj4zgcDqxW
-      Kzabjfb2dpLJJIIgEIlENtW5VvbJkyex2WzEYjGcTidjY2PrPc032XaNKLCwyOCF57dPVAOB
-      VJI7t6v3k1c2tw43v514VFM4lzOdXRWjWQBbFk7UajXvvvvupr+tucJcuXJlS/5vlr1xdFHO
-      4Q+2EUAiFsdoMm2J/CBLAoHg/uwEKxwvajkkZNXpSJc5wVcOm15fNm5rJZeOjYsxlQ/FW82Y
-      7MUtK0DBQACtLJIogeMwuIoqHBlqcbNoM1tq6l1qOQsCXy/GlB3AhZ+MoXZ347YY+aYG9ToN
-      SysJ9EqwOIVjQNkewOXt4eYXN9GY7XzT4djlacflUS6EUDi6bFyM2fU9wbIsI0nSkbkMrV7K
-      OAw27EUZB35J3k6oVKvOcCqV6qkMfdr8ShmHz4a9KGO/bFBuileoa556iX9pYZZANM35c4M1
-      B8v1z/tI5/Pk0gXc7R20e1w11z81/AliQx/FeIDuwfPYdLVZEV9ZYimWw6KXiaWLnBs8XbMN
-      M1MTJPMSZq2IymCnr6erpvyZZJxQPI2UT1FUGZByccyNrXR3tFZdRiQwScHopRjzkc8XyAkS
-      JzpP4W6s/sTW6KNRBs+e5fMvhmlzmclJWs6cqv6mm7V2UEhjdLiJBud22Y4uQjP3MZnNZEti
-      je2Q8E1Nks8XKcgier2dXC7LC0PPlfVpe2oBCLIal8OGDDULQKPV0nmiheVICaGYr7nuUiZK
-      JFlAkOKcbnWRL8k1CyCXy1JIhsnbPDTadne8b7WblTBYHMiytGP6b2KxN2DK5inKFjSyhFrv
-      RBKrWwNfw9XURDANWq2B9mYbKZWGQqEIVN+mJlcTyZAfqZhD1rkwU9vgYK0dkViWRH4Zp2O3
-      7RBRq/WIhQKejo4a26FCqzfRYrNR0qmYnUvS2mhDorxT51MLoK21mVAss6uzw6VikVhaxKgp
-      0dTSVnN+ncXJpZeuIah0rIRCtJtrt6K1w0tJZaDV3UgsU9uXtUZzczOGnIhZK6E22mvOn4yu
-      kEhlaWtuQFQbEXMJLI21hTQPrqQoUEAqFsjbGiGXpr195xN5XyORTSXQuFq5eOkCUilPXqpt
-      o2etHd7eHrJFFWohu8t2FGn2uLC5WklEQjW3o1jIIzpaKWXSvPh8N8FwsmJ0E2UOoFDXKNtZ
-      CnWNIgCFbZGFPJl8LYfTZVKp1DOzZ6/5/0jeZLH0TfWAAAAAAElFTkSuQmCC
-    </thumbnail>
-    <thumbnail height='192' name='Sheet 4' width='192'>
-      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
-      SUVORK5CYII=
-    </thumbnail>
-    <thumbnail height='192' name='Steps' width='192'>
-      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
-    </thumbnail>
-  </thumbnails>
 </workbook>
