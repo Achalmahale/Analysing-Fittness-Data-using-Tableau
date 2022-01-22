@@ -1,5 +1,5 @@
 # Analysing-Fittness-Data-using-Tableau
 I have used my Mi Band fittness tracker as a Data Source for this project
 
-![MY TOP 10 MUSIC ARTISTS](https://raw.githubusercontent.com/Achalmahale/Spotify-Listening-chart/master/MY%20TOP%2010%20MUSIC%20ARTISTS.png)
-![MUSIC PLAYED PER HOUR BASIS](https://raw.githubusercontent.com/Achalmahale/Spotify-Listening-chart/master/MUSIC%20PLAYED%20PER%20HOUR%20BASIS.png)
+![MI_FIT DATA](https://raw.githubusercontent.com/Achalmahale/Analysing-Fittness-Data-using-Tableau/master/Sleep%20and%20Heart%20Rate%20over%2024hours.png)
+![MI_FIT DATA](https://raw.githubusercontent.com/Achalmahale/Analysing-Fittness-Data-using-Tableau/master/MI_FIT%20DATA.png)
